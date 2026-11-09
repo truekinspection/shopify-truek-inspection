@@ -1,0 +1,91 @@
+generator client {
+  provider   = "prisma-client"
+  // Generate a JS-only client into src/prisma/generated/client
+  output     = "../src/prisma/generated/client"
+  engineType = "client"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Report {
+  id          Int      @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String
+  /// US phone in E.164-ish form (+1XXXXXXXXXX) when provided.
+  phoneNumber String?
+  vinNumber   String
+  createdAt   DateTime @default(now())
+}
+
+model Payment {
+  id          Int           @id @default(autoincrement())
+  firstName   String
+  lastName    String
+  email       String
+  phoneNumber String?
+  plan        String?
+  orderID     String?       @unique
+  status      ReportStatus?
+  createdAt   DateTime      @default(now())
+}
+
+enum ReportStatus {
+  STARTED
+  PENDING
+  COMPLETED
+}
+
+model Contact {
+  id        Int      @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String
+  vnnumber  String
+  message   String?
+  createdAt DateTime @default(now())
+}
+
+/// Time-limited token for full report preview (default 30 days after issuance).
+model ReportPreviewToken {
+  id                String   @id @default(cuid())
+  token             String   @unique
+  html              String   @db.Text
+  vin               String
+  /// ClearVin report id when returned by the vendor API (enables free re-fetch by reportId).
+  clearvinReportId  String?
+  expiresAt         DateTime
+  createdAt         DateTime @default(now())
+
+  @@index([expiresAt])
+}
+
+// model User {
+//   id        String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   clerkId   String   @unique
+//   email     String   @unique
+//   firstName String?
+//   lastName  String?
+//   imageUrl  String?
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
+
+//   requests ReportRequest[]
+//   payments Payment[]
+// }
+
+// model Payment {
+//   id              String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+//   userId          String
+//   firstName       String
+//   lastName        String
+//   email           String   @unique
+//   vnNumber        String
+//   orderID String   @unique
+//   amountCents     Int
+//   currency        String   @default("USD")
+//   status          String   @default("PENDING")
+//   createdAt       DateTime @default(now())
+// }

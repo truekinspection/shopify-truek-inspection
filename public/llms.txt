@@ -1,0 +1,39 @@
+# TrueK Inspection
+
+> TrueK Inspection sells certified vehicle history reports for used-car buyers in the United States. A single report costs $69 and is compiled from licensed data supplied by ClearVin and Black Book.
+
+TrueK Inspection is a fully online service — there is no physical office or showroom. Customers submit a 17-character VIN through the website and receive a digital report. The company's legal registered name is TrueK Inspection.
+
+## What a report includes
+
+- Vehicle specification: make, model, year, trim, and factory-installed options decoded from the VIN.
+- DMV title history: title brands such as salvage, rebuilt, flood, or lemon, and the states that issued them.
+- Safety recall status: open manufacturer recalls tied to the VIN, sourced from NHTSA data.
+- Online listing history: past for-sale listings found for the vehicle.
+- Junk and salvage information: whether the vehicle was ever declared a total loss or sold for parts.
+- Accident information: reported collision and damage history where available.
+
+## Services
+
+- [Request a Vehicle History Report](https://www.truekinspection.com/#report): Enter a VIN to generate a report.
+- [Pricing](https://www.truekinspection.com/pricing): Flat $69 per report, one VIN per purchase.
+- [Sample Report](https://www.truekinspection.com/sample): A completed example report to preview before buying.
+
+## Company
+
+- [About Us](https://www.truekinspection.com/#about-us): Company background, mission, and vision.
+- [Contact](https://www.truekinspection.com/#contact): contact@truekinspection.com
+
+## Policies
+
+- [Terms & Conditions](https://www.truekinspection.com/terms): Legal business name, service terms, and the NMVTIS data-use notice.
+- [Privacy Policy](https://www.truekinspection.com/privacy): How customer data is collected and used.
+- [Refund Policy](https://www.truekinspection.com/refund-policy): Refunds are available within 14 days of purchase, per stated terms.
+
+## Data sources
+
+Report data is licensed from ClearVin and Black Book. TrueK Inspection does not independently verify the underlying records — accuracy depends on what these providers, along with DMV and NMVTIS databases, have on file for a given VIN.
+
+## Optional
+
+- Sitemap: https://www.truekinspection.com/sitemap.xml
