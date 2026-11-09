@@ -7,13 +7,15 @@ interface UserState {
   email: string;
   phoneNumber: string;
   vnNumber: string;
-  setUserData: (data: {
-    firstName: string;
-    lastName: string;
-    email: string;
-    phoneNumber: string;
-    vnNumber: string;
-  }) => void;
+  setUserData: (
+    data: Partial<{
+      firstName: string;
+      lastName: string;
+      email: string;
+      phoneNumber: string;
+      vnNumber: string;
+    }>,
+  ) => void;
   clearUserData: () => void;
 }
 
@@ -25,7 +27,7 @@ export const useUserStore = create<UserState>()(
       email: "",
       phoneNumber: "",
       vnNumber: "",
-      setUserData: (data) => set(data),
+      setUserData: (data) => set((state) => ({ ...state, ...data })),
       clearUserData: () =>
         set({
           firstName: "",
